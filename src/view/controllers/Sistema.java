@@ -7,10 +7,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import negocios.ControllerPessoa;
+import negocios.beans.Pessoa;
 
 public class Sistema extends Application{
 
 	private static Sistema instance;
+	private ControllerPessoa control;
 	
 	public static Sistema getInstance(){
 		if(instance == null){
@@ -24,6 +27,7 @@ public class Sistema extends Application{
 		
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		instance = this;
 		this.primaryStage = primaryStage;
 		this.primaryStage.setResizable(false);
 		this.primaryStage.setTitle("Agenda Telefonica");
@@ -34,6 +38,7 @@ public class Sistema extends Application{
 		this.primaryStage.show();
 		
 		this.openLoginScreen();
+		this.carregarPessoas();
 	}
 	
 	private void openLoginScreen(){
@@ -50,8 +55,28 @@ public class Sistema extends Application{
 		}
 	}
 	
+	private void carregarPessoas(){
+		this.control = ControllerPessoa.getInstance();
+		Pessoa a = new Pessoa("Joao", "99999-9999");
+		Pessoa b = new Pessoa("Maria", "99999-9999");
+		Pessoa c = new Pessoa("Thiago", "99999-9999");
+		Pessoa d = new Pessoa("Zé", "99999-9999");
+		this.control.cadastrar(a);
+		this.control.cadastrar(b);
+		this.control.cadastrar(c);
+		this.control.cadastrar(d);
+	}
+	
 	public void changeStage(Stage stage){
 		this.primaryStage = stage;
+	}
+	
+	public Stage getPrimaryStage(){
+		return this.primaryStage;
+	}
+	
+	public Pane getRootScene(){
+		return this.rootScene;
 	}
 
 	public static void main(String[] args) {

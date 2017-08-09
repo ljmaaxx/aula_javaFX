@@ -12,13 +12,13 @@
         <menus>
           <Menu mnemonicParsing="false" text="Contatos">
             <items>
-              <MenuItem mnemonicParsing="false" text="Novo" />
-                  <MenuItem mnemonicParsing="false" text="Listar" />
+              <MenuItem fx:id="miNovo" mnemonicParsing="false" onAction="#novoContato" text="Novo" />
+                  <MenuItem fx:id="miListar" mnemonicParsing="false" onAction="#listarContatos" text="Listar" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Sobre">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="miAbout" mnemonicParsing="false" text="About" />
             </items>
           </Menu>
         </menus>

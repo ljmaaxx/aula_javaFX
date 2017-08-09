@@ -7,9 +7,17 @@ import negocios.beans.Pessoa;
 
 public class ControllerPessoa {
 	
+	private static ControllerPessoa instance;
 	private RepositorioPessoa repositorioPessoa;
 	
-	public ControllerPessoa(){
+	public static ControllerPessoa getInstance(){
+		if(instance == null){
+			instance = new ControllerPessoa();
+		}
+		return instance;
+	}
+	
+	private ControllerPessoa(){
 		this.repositorioPessoa = RepositorioPessoa.getInstance();
 	}
 
@@ -19,6 +27,10 @@ public class ControllerPessoa {
 	
 	public ArrayList<Pessoa> listar(){
 		return this.repositorioPessoa.listarPessoas();
+	}
+	
+	public void atualizar(Pessoa p){
+		this.repositorioPessoa.atualizar(p);
 	}
 	
 }
