@@ -92,7 +92,7 @@ Feito isso iremos então adiconar o ``CadastrarContatoTemplate`` dentro do ``Ove
 
 > Na quarta linha iremos modificar ``Stage`` inserindo o ``Scene``(Cenário) que foi instanciado na segunda linha.
 
-> /Na quinta linha iremos passar o ``Stage`` atualizado, ou seja, com o conteúdo já adicionado, para a classe da ``Application``. 
+> Na quinta linha iremos passar o ``Stage`` atualizado, ou seja, com o conteúdo já adicionado, para a classe da ``Application``. 
 
 ### 3. Eventos de click de teclado
 
@@ -109,6 +109,8 @@ this.passwordField.setOnKeyPressed(e -> {
 ```
 
 > utilizando [lambda](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html), estou criando um método que quando uma tecla for pressionada ele irá verificar o código dessa tecla, se for igual ao enter ele irá executar o método ``login()``. 
+
+> Lembrando que essa é __apenas uma__ das abordagens existentes, __existem outras__ abordagens que podem ser utilizadas para fazer a mesma operação.
 
 
 ```
