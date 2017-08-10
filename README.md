@@ -51,5 +51,5 @@ public void start(){
 
 ### 2. Janela de navegação da aplicação
 
-![Janela Principal](/imgs/main.jpg)
+![Janela Principal](/imgs/main.JPG)
 
