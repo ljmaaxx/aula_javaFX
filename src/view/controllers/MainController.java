@@ -64,7 +64,8 @@ public class MainController{
 					if(loginOk){
 						Scene scene = new Scene(root);
 						stage.setScene(scene);
-						stage.setTitle(user);
+						String tituloAtual = stage.getTitle();
+						stage.setTitle(tituloAtual +" - "+ (""+user.charAt(0)).toUpperCase() + user.substring(1, user.length()));
 						stage.setResizable(true);
 						sis.changeStage(stage);
 					}
